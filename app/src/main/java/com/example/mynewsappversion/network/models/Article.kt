@@ -1,4 +1,4 @@
-package com.example.mynewsappversion.network.response
+package com.example.mynewsappversion.network.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -15,7 +15,7 @@ data class Article(
     val content: String,
     val description: String,
     val publishedAt: String,
-    val source: Source,
+    val source: Source, //Room only handle  primitive dataTypes,for custom datatype,we have to use Typecoverter to interret Room how to handle them
     val title: String,
     val url: String,
     val urlToImage: String
