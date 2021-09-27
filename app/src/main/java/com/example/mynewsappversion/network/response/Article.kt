@@ -1,6 +1,16 @@
 package com.example.mynewsappversion.network.response
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+//@Entity specify table name
+@Entity(
+    tableName = "articles"
+)
 data class Article(
+    @PrimaryKey(autoGenerate = true)
+    val id : Int? = null,
+
     val author: String,
     val content: String,
     val description: String,
