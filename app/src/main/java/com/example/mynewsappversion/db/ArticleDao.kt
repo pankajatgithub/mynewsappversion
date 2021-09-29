@@ -8,13 +8,11 @@ import com.example.mynewsappversion.network.models.Article
 interface ArticleDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(article : Article) : Long
+    suspend fun upsert(article: Article): Long
 
-    @Query("SELECT * FROM articles")//function is returning livedata object hence it cant be suspend function
-    fun getAllArticles() : LiveData<List<Article>>
-//viewmodel enable fragments to subscribe livedata changes,whenever database changes,livedata updates the subscribers about changes.
+    @Query("SELECT * FROM articles")
+    fun getAllArticles(): LiveData<List<Article>>
 
-   @Delete
-   suspend fun deleteArticle(article: Article)
-
+    @Delete
+    suspend fun deleteArticle(article: Article)
 }
